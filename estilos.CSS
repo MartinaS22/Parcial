@@ -1,67 +1,55 @@
 /* Estilos para el cuerpo de la página */
 body {
-    background-color: #f1f1f1; /* Color de fondo gris */
-    height: 100%; /* Ajustar la altura del cuerpo al 100% del viewport */
+    background-color: #dddddd; /* Color de fondo gris */
     margin: 0; /* Eliminar margen predeterminado del cuerpo */
     padding: 0; /* Eliminar el relleno predeterminado del cuerpo */
+    height: 100%; /* Ajustar la altura del cuerpo al 100% del viewport */
 }
 
 .contenido {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #ffffff; /* Fondo blanco para la tarjeta */
-    border: 1px solid #dddddd; /* Borde gris claro */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar efecto de tarjeta */
-    padding: 0; /* Eliminar el relleno interior */
-    margin: 40px auto; /* Margen superior e inferior para separarla del borde de la página */
-    width: 80%;
-    max-width: 1200px; /* Ancho máximo para evitar que crezca demasiado en pantallas grandes */
-    height: auto; /* Ajustar la altura automáticamente */
-}
-
-.barra-superior, .barra-inferior {
-    width: 100%; /* Asegurar que las barras ocupen todo el ancho del contenedor */
-    background-color: #979797;
-    text-align: center; /* Centrar el contenido */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
 
 .barra-superior {
-    padding: 10px 0; /* Añadir relleno superior e inferior */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    z-index: 1;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    height: 10%; /* Ajustar la altura de la barra inferior al 20% del viewport */
 }
 
-.barra-superior h1 {
-    margin: 0; /* Eliminar márgenes del h1 */
-}
-
-.barra-inferior {
-    padding: 5px 0; /* Añadir relleno superior e inferior */
-}
-
-.barra-inferior img {
-    max-height: 50px; /* Ajustar la altura máxima de la imagen */
+.barra-superior h1{
+    text-align: center;
 }
 
 .contenido-medio {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px; /* Añadir relleno interno */
+    flex-direction: row; 
+    justify-content: space-between; 
+    align-items: center; 
+    margin-top: 80px; 
+    padding: 20px;
     box-sizing: border-box;
-    width: 100%; /* Asegurar que ocupe todo el ancho del contenedor */
+    margin-bottom: 20%; 
+    height: calc(100% - 100px); 
 }
 
-.contenido-medio .foto img {
+
+.contenido-medio img {
     max-width: 100%; 
-    height: auto;
+    height: auto; 
     border-radius: 10px; 
 }
 
-.contenido-medio .texto p {
-    max-width: 80%; 
-    font-size: 16px;
+.contenido-medio p {
+    max-width: 45%; 
 }
 
 @media screen and (max-width: 768px) { 
@@ -72,7 +60,27 @@ body {
 
     .contenido-medio img,
     .contenido-medio p {
-        max-width: 80%; 
+        max-width: 90%; 
         height: auto; 
     }
+}
+
+.barra-inferior {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    z-index: 1;
+    padding: 20px;
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+    height: 5%; 
+}
+ /* Estilo adicional para la imagen en la barra inferior */
+.barra-inferior img {
+    /*width: 100%;*/
+    height: 20px;
+    display: block;
+    margin: auto;
+    
 }
