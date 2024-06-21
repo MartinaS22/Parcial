@@ -37,6 +37,7 @@ body {
 
 .barra-inferior {
     padding: 5px 0; /* Añadir relleno superior e inferior */
+    margin-top: 20px; /* Añadir margen superior para evitar superposición */
 }
 
 .barra-inferior img {
@@ -47,32 +48,43 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: center; /* Cambiar a 'center' para centrar verticalmente los elementos hijos */
     padding: 20px; /* Añadir relleno interno */
     box-sizing: border-box;
     width: 100%; /* Asegurar que ocupe todo el ancho del contenedor */
+    gap: 20px; /* Añadir espacio entre los elementos */
+}
+
+.contenido-medio .foto {
+    flex: 1; /* Permitir que la imagen ocupe una parte proporcional del espacio */
+    max-width: 40%; /* Limitar el ancho máximo de la imagen */
 }
 
 .contenido-medio .foto img {
-    max-width: 100%; 
+    width: 100%; /* Asegurar que la imagen ocupe todo el ancho de su contenedor */
     height: auto;
-    border-radius: 10px; 
+    border-radius: 10px;
+}
+
+.contenido-medio .texto {
+    flex: 2; /* Permitir que el texto ocupe el resto del espacio disponible */
+    max-width: 60%; /* Limitar el ancho máximo del texto */
 }
 
 .contenido-medio .texto p {
-    max-width: 80%; 
-    font-size: 16px;
+    max-width: 100%; /* Asegurar que los párrafos ocupen todo el ancho disponible */
+    font-size: 20px;
 }
 
-@media screen and (max-width: 768px) { 
+@media screen and (max-width: 768px) {
     .contenido-medio {
-        flex-direction: column; 
-        align-items: flex-start; 
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     .contenido-medio img,
     .contenido-medio p {
-        max-width: 80%; 
-        height: auto; 
+        max-width: 100%;
+        height: auto;
     }
 }
